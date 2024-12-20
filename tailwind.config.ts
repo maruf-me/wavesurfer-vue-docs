@@ -11,53 +11,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          "100": "#BED2FF",
-          "200": "#86ABFF",
-          "300": "#4E84FF",
-          "400": "#165DFF",
-          "600": "#0037B4",
-          "700": "#002A8B",
-          "800": "#001E63",
-          "900": "#00123A",
-          DEFAULT: "#0043DD",
-        },
-        neutral: {
-          "100": "#F5F5F5",
-          "200": "#EEEEEE",
-          "300": "#E0E0E0",
-          "400": "#9E9E9E",
-          "600": "#757575",
-          "700": "#616161",
-          "800": "#424242",
-          "900": "#212121",
-          DEFAULT: "#BDBDBD",
-        },
-        danger: {
-          "100": "#FFEBEE",
-          "700": "#D32F2F",
-          DEFAULT: "#D50000",
-        },
-        success: {
-          "100": "#E8F5E9",
-          "600": "#4CAF50",
-          DEFAULT: "#009900",
-        },
-        warning: {
-          "100": "#FFF3E0",
-          "600": "#FF9100",
-          DEFAULT: "#FF6D00",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        primary: "#020420",
+        secondary: "#00dc82",
+        white: "#ffffff",
+        black: "#111827",
+        neutral: "#404040",
       },
       spacing: {
         space5: "5px",

@@ -69,7 +69,6 @@ const DocsLayout = ({
         </div>
       </header>
 
-      {/* [calc(100vh-64px)] */}
       <div className="_container grid grid-cols-5 min-h-">
         <aside className='-mb-px sticky top-[64px] bg-blue-400 col-start-1 col-end-2 h-[calc(100vh-64px)]'>
           <ul>
