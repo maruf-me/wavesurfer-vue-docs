@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 p-6">
+    <section className="min-h-screen flex items-center justify-center  p-6">
       <div className="container text-center animate-fade-up">
         <h1 className="text-5xl font-bold text-neutral-900 mb-6">
           Vue.js Waveform Visualizer
@@ -13,7 +13,7 @@ export const HeroSection = () => {
         <div className="flex gap-4 justify-center flex-wrap">
           <Link
             href="/docs/introduction"
-            className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
+            className="bg-primary dark:bg-secondary text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
           >
             Get Started
           </Link>

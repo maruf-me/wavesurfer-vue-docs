@@ -29,7 +29,7 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-white">
+    <section id="features" className="py-20">
       <div className="container mx-auto py-6">
         <h2 className="text-4xl font-bold text-neutral-900 text-center mb-16">
           Key Features
@@ -38,7 +38,7 @@ export const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all animate-fade-up"
+              className="bg-gray-200 dark:bg-gray-800 rounded-lg p-6 hover:shadow-lg transition-all animate-fade-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-center mb-4">

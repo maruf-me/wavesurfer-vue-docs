@@ -14,7 +14,7 @@ export const InstallationSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-docblue text-center mb-16">
           Installation
