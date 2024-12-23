@@ -43,7 +43,7 @@ export const InstallationSection = () => {
           <p className="text-docgray mb-4">
             Import and use the component in your Vue.js application:
           </p>
-          <pre className="bg-gray-900 text-white p-6 rounded-lg">
+          <pre className="bg-gray-900 text-white p-6 rounded-lg overflow-hidden overflow-x-auto">
             <code>{`import { WaveSurferPlayer } from '@meersagor/wavesurfer-vue'
   export default {
     components: {

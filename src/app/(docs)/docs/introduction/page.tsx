@@ -2,7 +2,7 @@ const Introduction = () => {
   return (
     <div className="prose max-w-none">
       <h1 className="text-4xl font-bold text-docblue mb-6">
-        Vue.js Waveform <span className="text-secondary">Visualizer</span>
+        Vue.js Waveform <span className="text-primary">Visualizer</span>
       </h1>
       <p className="text-docgray mb-6">
         A powerful Vue.js package for audio visualization built on WavesurferJS.

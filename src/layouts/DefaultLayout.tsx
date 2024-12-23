@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 import "@/assets/css/globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { cn } from "@/lib/utils";
 
 
 const geistSans = Geist({
@@ -29,15 +32,17 @@ export const DefaultLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-primary bg-white`} suppressHydrationWarning={true}
+        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-secondary bg-white`)} suppressHydrationWarning={true}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light" // dark, light, system
+          defaultTheme="dark" // dark, light, system
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
+          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>

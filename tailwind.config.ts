@@ -11,8 +11,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#020420",
-        secondary: "#00dc82",
+        primary: "#00dc82",
+        secondary: "#020420",
         white: "#ffffff",
         black: "#111827",
         neutral: "#404040",
