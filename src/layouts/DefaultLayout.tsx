@@ -1,8 +1,10 @@
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
-import { Toaster } from "@/components/ui/toaster"
 
-import { Geist, Geist_Mono } from "next/font/google";
 import "@/assets/css/globals.css";
+import ThemeProvider from "@/components/ThemeProvider";
+import { Geist, Geist_Mono } from "next/font/google";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,18 +22,25 @@ export const metadata: Metadata = {
 };
 
 export const DefaultLayout = ({
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>)=>{
-    return (
-        <html lang="en">
-          <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning={true}
-          >
-            {children}
-            <Toaster />
-          </body>
-        </html>
-      );
-  }
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-primary bg-white`} suppressHydrationWarning={true}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light" // dark, light, system
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
