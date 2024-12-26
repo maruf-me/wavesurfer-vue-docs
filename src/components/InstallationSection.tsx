@@ -1,6 +1,7 @@
 'use client';
 import { useToast } from '@/hooks/use-toast';
 import { Copy, Terminal } from 'lucide-react';
+import { CodeBlock } from './CodeBlock';
 
 export const InstallationSection = () => {
   const { toast } = useToast();
@@ -12,6 +13,66 @@ export const InstallationSection = () => {
       description: 'The command has been copied to your clipboard.',
     });
   };
+
+  const codeSnippet = 
+  `<script setup lang="ts">
+  import { ref } from 'vue';
+  import type WaveSurfer from 'wavesurfer.js';
+  import { WaveSurferPlayer } from '@meersagor/wavesurfer-vue';
+  
+  const options = ref({
+    height: 48,
+    waveColor: 'gray',
+    progressColor: 'red',
+    barGap: 5,
+    barWidth: 5,
+    barRadius: 8,
+    duration: 80,
+    url: "https://revews-bucket.s3.ap-southeast-1.amazonaws.com/a06mmMU3sgnzuUkH4OiHvyuUgCFdLSnJaDLBao7y.webm",
+  });
+  
+  const currentTime = ref<string>('00:00');
+  const totalDuration = ref<string>('00:00');
+  const waveSurfer = ref<WaveSurfer | null>(null);
+  
+  const formatTime = (seconds: number): string => 
+    [seconds / 60, seconds % 60]
+      .map((v) => \`0\${Math.floor(v)}\`.slice(-2))
+      .join(':');
+  
+  const timeUpdateHandler = (time: number) => {
+    currentTime.value = formatTime(time);
+  };
+  
+  const readyHandler = (duration: any) => {
+    totalDuration.value = formatTime(duration);
+  };
+  
+  const readyWaveSurferHandler = (ws: WaveSurfer) => {
+    waveSurfer.value = ws;
+  };
+  </script>
+  
+  <template>
+    <main>
+      <h1>WaveSurferPlayer Using Components</h1>
+      <WaveSurferPlayer 
+        :options="options" 
+        @timeupdate="(time: number) => timeUpdateHandler(time)"
+        @ready="(duration: number) => readyHandler(duration)" 
+        @waveSurfer="(ws: WaveSurfer) => readyWaveSurferHandler(ws)" 
+      />
+      <p>currentTime: {{ currentTime }}</p>
+      <p>totalDuration: {{ totalDuration }}</p>
+      <button 
+        @click="waveSurfer?.playPause()" 
+        :style="{ minWidth: '5em' }"
+      >
+        Play
+      </button>
+    </main>
+  </template>
+  `;  
 
   return (
     <section className="py-20">
@@ -43,14 +104,7 @@ export const InstallationSection = () => {
           <p className="text-docgray mb-4">
             Import and use the component in your Vue.js application:
           </p>
-          <pre className="bg-gray-900 text-white p-6 rounded-lg overflow-hidden overflow-x-auto">
-            <code>{`import { WaveSurferPlayer } from '@meersagor/wavesurfer-vue'
-  export default {
-    components: {
-      WaveSurferPlayer
-    }
-  }`}</code>
-          </pre>
+            <CodeBlock codeSnippet={codeSnippet}/>
         </div>
       </div>
     </section>

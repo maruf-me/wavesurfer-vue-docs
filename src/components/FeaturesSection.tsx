@@ -11,8 +11,7 @@ export const FeaturesSection = () => {
       title: "Customizable",
       description: "Fully customizable appearance and behavior",
       code: `<template>
-  <vue-waveform
-    :audio-url="audioUrl"
+  <WaveSurferPlayer
     :options="options"
   />
 </template>`,
@@ -23,7 +22,8 @@ export const FeaturesSection = () => {
       code: `const options = {
   responsive: true,
   waveColor: '#4a90e2',
-  progressColor: '#2c5282'
+  progressColor: '#2c5282',
+  url: 'https://revews-bucket.s3.ap-southeast-1.amazonaws.com/a06mmMU3sgnzuUkH4OiHvyuUgCFdLSnJaDLBao7y.webm'
 }`,
     },
   ];
