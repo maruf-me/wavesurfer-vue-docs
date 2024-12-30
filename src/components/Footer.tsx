@@ -30,7 +30,7 @@ export const Footer = ()=>{
                 <div className="size-space32 rounded-full bg-primary/40 text-center">
                   <Image
                     src="https://avatars.githubusercontent.com/u/78520766?v=4"
-                    alt="Picture of the author"
+                    alt="Picture of the author Meer Sagor"
                     width={32}
                     height={32}
                     className='rounded-full'

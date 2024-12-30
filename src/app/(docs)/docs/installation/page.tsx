@@ -1,8 +1,9 @@
-'use client'
-import { useToast } from "@/hooks/use-toast";
-import { cn } from "@/lib/utils";
-import { Copy, Terminal } from "lucide-react";
-
+'use client';
+import { ComponentUsageCode } from '@/components/ComponentUsageCode';
+import NavigationCard from '@/components/NavigationCard';
+import { useToast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
+import { Copy, Terminal } from 'lucide-react';
 const InstallationPage = () => {
   const { toast } = useToast();
 
@@ -14,10 +15,10 @@ const InstallationPage = () => {
     });
   };
   return (
-    <div className="p-8">
-      <h1 className={cn("text-4xl font-bold text-docblue mb-6")}>Installation</h1>
-      <div className={cn("prose max-w-none")}>
-        <p className={cn("mb-6")}>
+    <section className="p-8">
+      <h1 className={cn('text-4xl font-bold  mb-6')}>Installation</h1>
+      <div className={cn('prose max-w-none')}>
+        <p className={cn('mb-6')}>
           Get started with Vue Waveform Visualizer in your project by following
           these steps:
         </p>
@@ -28,7 +29,9 @@ const InstallationPage = () => {
               <span className="text-gray-400">npm</span>
             </div>
             <button
-              onClick={() => copyCommand('npm install @meersagor/wavesurfer-vue')}
+              onClick={() =>
+                copyCommand('npm install @meersagor/wavesurfer-vue')
+              }
               className="text-gray-400 hover:text-white transition-colors"
             >
               <Copy className="w-5 h-5" />
@@ -39,27 +42,30 @@ const InstallationPage = () => {
           </pre>
         </div>
 
-        <h2 className="text-2xl font-semibold text-docblue mt-8 mb-4">
-          Basic Setup
-        </h2>
-        <p className="text-docgray mb-4">
+        <h2 className="text-2xl font-semibold  mt-8 mb-4">Basic Setup</h2>
+        <p className=" mb-4">
           After installation, import and use the component in your Vue.js
           application:
         </p>
-        <div className="bg-gray-900 rounded-lg p-4">
-          <pre className="text-white">
-            <code>{`import { WaveSurferPlayer } from '@meersagor/wavesurfer-vue'
+        <ComponentUsageCode />
 
-export default {
-  components: {
-    WaveSurferPlayer
-  }
-}`}</code>
-          </pre>
+        <div className="grid gap-6 md:grid-cols-2 my-8">
+          <div></div>
+          <NavigationCard link={'/docs/component-usage'}>
+            <NavigationCard.Title>
+              <h3 className="text-xl font-semibold mb-3">Component-Based</h3>
+            </NavigationCard.Title>
+            <NavigationCard.Description>
+              <p>
+                Use our pre-built components for quick integration into your
+                Vue.js applications.
+              </p>
+            </NavigationCard.Description>
+          </NavigationCard>
         </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default InstallationPage
+export default InstallationPage;

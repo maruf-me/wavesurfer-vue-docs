@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils';
-import { Book, Terminal } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -11,30 +10,26 @@ const navigationItems = [
       {
         title: "Introduction",
         href: "/docs/introduction",
-        icon: Book,
       },
       {
         title: "Installation",
         href: "/docs/installation",
-        icon: Terminal,
       },
     ],
   },
-  // {
-  //   title: "Usage",
-  //   items: [
-  //     {
-  //       title: "Component Usage",
-  //       href: "/docs/component-usage",
-  //       icon: Code,
-  //     },
-  //     {
-  //       title: "Composable Usage",
-  //       href: "/docs+6/composable-usage",
-  //       icon: Blocks,
-  //     },
-  //   ],
-  // },
+  {
+    title: "Usage",
+    items: [
+      {
+        title: "Component Usage",
+        href: "/docs/component-usage",
+      },
+      {
+        title: "Composable Usage",
+        href: "/docs/composable-usage",
+      },
+    ],
+  },
 ];
 
 const AsideBar = () => {
