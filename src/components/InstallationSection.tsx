@@ -77,7 +77,7 @@ export const InstallationSection = () => {
   return (
     <section className="py-20">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-docblue text-center mb-16">
+        <h2 className="text-4xl font-bold  text-center mb-16">
           Installation
         </h2>
         <div className="bg-gray-900 rounded-lg p-6 mb-8">
@@ -98,10 +98,10 @@ export const InstallationSection = () => {
           </pre>
         </div>
         <div className="prose max-w-none">
-          <h3 className="text-2xl font-semibold text-docblue mb-4">
+          <h3 className="text-2xl font-semibold  mb-4">
             Quick Start
           </h3>
-          <p className="text-docgray mb-4">
+          <p className=" mb-4">
             Import and use the component in your Vue.js application:
           </p>
             <CodeBlock codeSnippet={codeSnippet}/>

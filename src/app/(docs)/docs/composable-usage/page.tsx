@@ -1,9 +1,12 @@
-const ComposableUsage = ()=>{
+'use client';
+import { ComposableUsageCode } from "@/components/ComposableUsageCode"
+
+const ComposableUsagePage = ()=>{
     return (
         <section>
-            <h1>Composable Usage</h1>
+            <ComposableUsageCode/>
         </section>
     )
 }
 
-export default ComposableUsage
+export default ComposableUsagePage

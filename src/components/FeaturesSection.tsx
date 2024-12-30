@@ -42,8 +42,8 @@ export const FeaturesSection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-center mb-4">
-                <Code className="w-6 h-6 text-docblue mr-2" />
-                <h3 className="text-xl font-semibold text-docblue">
+                <Code className="w-6 h-6  mr-2" />
+                <h3 className="text-xl font-semibold ">
                   {feature.title}
                 </h3>
               </div>

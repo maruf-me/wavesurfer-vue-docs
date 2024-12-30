@@ -8,7 +8,7 @@ type NavigationCardProps = PropsWithChildren & {
   link: string;
 };
 
-export const NavigationCard = ({ children, link }: NavigationCardProps) => {
+function NavigationCard({ children, link }: NavigationCardProps) {
   return (
     <NavigationCardContext.Provider value={null}>
       <Link href={link}>
@@ -20,14 +20,15 @@ export const NavigationCard = ({ children, link }: NavigationCardProps) => {
   );
 };
 
-export const NavigationCardTitle = ({ children }: PropsWithChildren) => (
-  <div>{children}</div>
-);
+// eslint-disable-next-line react/display-name
+NavigationCard.Title = function ({ children }: PropsWithChildren) {
+  return <div>{children}</div>;
+};
 
-export const NavigationCardDescription = ({ children }: PropsWithChildren) => (
-  <div>{children}</div>
-);
+// eslint-disable-next-line react/display-name
+NavigationCard.Description = function ({ children }: PropsWithChildren) {
+  return <div>{children}</div>;
+};
 
-// Attach to NavigationCard for convenience
-NavigationCard.Title = NavigationCardTitle;
-NavigationCard.Description = NavigationCardDescription;
+
+export default NavigationCard
