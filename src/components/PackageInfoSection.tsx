@@ -5,12 +5,16 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { 
   Package, Download, Star, GitBranch, 
-  ArrowRight, ExternalLink, Github, Copy, Check,
+  ArrowRight, ExternalLink, Github, Copy, Check
 } from 'lucide-react';
 import { useState } from 'react';
+import type { NpmPackageInfo } from '@/@types/packageInfo';
 
-export function PackageInfoSection() {
+
+
+export function PackageInfoSection({ packageInfo }: { packageInfo: NpmPackageInfo | null }) {
   const [copied, setCopied] = useState<string | null>(null);
+
 
   const copyToClipboard = async (text: string, type: string) => {
     try {
@@ -22,29 +26,17 @@ export function PackageInfoSection() {
     }
   };
 
-  const packageInfo = {
-    name: "@meersagor/wavesurfer-vue",
-    version: "1.0.0",
-    description: "A modular Vue 3 package for wavesurfer.js with individual plugins",
-    downloads: "1.2k+",
-    stars: "50+",
-    lastUpdated: "2024-01-15",
-    license: "MIT",
-    repository: "https://github.com/meer-sagor/wavesurfer-vue",
-    npmUrl: "https://www.npmjs.com/package/@meersagor/wavesurfer-vue"
-  };
 
-  const keywords = [
-    "vue", "vue3", "wavesurfer", "audio", "waveform", "visualization",
-    "typescript", "composable", "plugin", "modular", "recording"
-  ];
+  const currentInfo = packageInfo;
 
   const stats = [
-    { label: "Downloads", value: packageInfo.downloads, icon: Download },
-    { label: "GitHub Stars", value: packageInfo.stars, icon: Star },
-    { label: "Version", value: packageInfo.version, icon: Package },
-    { label: "License", value: packageInfo.license, icon: GitBranch }
+    { label: "Downloads", value: currentInfo?.downloads, icon: Download },
+    { label: "GitHub Stars", value: currentInfo?.stars, icon: Star },
+    { label: "Version", value: currentInfo?.version, icon: Package },
+    { label: "License", value: currentInfo?.license, icon: GitBranch }
   ];
+
+
 
   return (
     <section className="py-20 bg-gradient-section dark:bg-gradient-section-dark">
@@ -72,23 +64,23 @@ export function PackageInfoSection() {
               <CardContent className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="font-medium">Name:</span>
-                  <code className="bg-muted px-2 py-1 rounded text-sm">{packageInfo.name}</code>
+                  <code className="bg-muted px-2 py-1 rounded text-sm">{currentInfo?.name}</code>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="font-medium">Version:</span>
-                  <Badge variant="secondary">{packageInfo.version}</Badge>
+                  <Badge variant="secondary">{currentInfo?.version}</Badge>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="font-medium">License:</span>
-                  <Badge variant="outline">{packageInfo.license}</Badge>
+                  <Badge variant="outline">{currentInfo?.license}</Badge>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="font-medium">Last Updated:</span>
-                  <span className="text-muted-foreground">{packageInfo.lastUpdated}</span>
+                  <span className="text-muted-foreground">{currentInfo?.lastUpdated}</span>
                 </div>
                 <div>
                   <span className="font-medium block mb-2">Description:</span>
-                  <p className="text-muted-foreground text-sm">{packageInfo.description}</p>
+                  <p className="text-muted-foreground text-sm">{currentInfo?.description}</p>
                 </div>
               </CardContent>
             </Card>
@@ -150,7 +142,7 @@ export function PackageInfoSection() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {keywords.map((keyword, index) => (
+                  {currentInfo?.keywords.map((keyword: string, index: number) => (
                     <Badge key={index} variant="outline" className="text-xs">
                       {keyword}
                     </Badge>
@@ -190,14 +182,14 @@ export function PackageInfoSection() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <Button variant="outline" className="w-full justify-start" asChild>
-                  <Link href={packageInfo.repository} target="_blank" rel="noopener noreferrer">
+                  <Link href={currentInfo?.repository || ''} target="_blank" rel="noopener noreferrer">
                     <Github className="h-4 w-4 mr-2" />
                     View on GitHub
                     <ExternalLink className="h-4 w-4 ml-auto" />
                   </Link>
                 </Button>
                 <Button variant="outline" className="w-full justify-start" asChild>
-                  <Link href={packageInfo.npmUrl} target="_blank" rel="noopener noreferrer">
+                  <Link href={currentInfo?.npmUrl || ''} target="_blank" rel="noopener noreferrer">
                     <Package className="h-4 w-4 mr-2" />
                     View on NPM
                     <ExternalLink className="h-4 w-4 ml-auto" />

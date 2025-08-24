@@ -2,10 +2,11 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Layers, Zap, Code, Settings, ArrowRight, Play, Star, Download, Github } from "lucide-react";
+import type { NpmPackageInfo } from "@/@types/packageInfo";
 
-export const HeroSection = () => {
+export const HeroSection = ({ packageInfo }: { packageInfo: NpmPackageInfo | null }) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero dark:bg-gradient-hero-dark">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero dark:bg-gradient-hero-dark pt-8">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
@@ -47,7 +48,7 @@ export const HeroSection = () => {
         </p>
         
         {/* Feature Highlights */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16 max-w-5xl mx-auto animate-fade-in-up delay-300">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto animate-fade-in-up delay-300">
           <div className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-200/50 hover:bg-white/90 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 dark:bg-slate-800/80 dark:border-slate-700/50">
             <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl mb-4 mx-auto group-hover:scale-110 transition-transform">
               <Layers className="h-6 w-6 text-white" />
@@ -72,7 +73,7 @@ export const HeroSection = () => {
         </div>
         
         {/* CTA Buttons */}
-        <div className="flex gap-4 justify-center flex-wrap mb-12 animate-fade-in-up delay-400">
+        <div className="flex gap-4 justify-center flex-wrap my-8 animate-fade-in-up delay-400">
           <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                             <Link href="#installation">
               Get Started
@@ -114,24 +115,24 @@ export const HeroSection = () => {
         </div>
 
         {/* Social Proof */}
-        <div className="mt-16 flex items-center justify-center gap-8 text-slate-500 dark:text-slate-400 animate-fade-in delay-700">
+        <div className="mt-16 pb-12 flex items-center justify-center gap-8 text-slate-500 dark:text-slate-400 animate-fade-in delay-700">
           <div className="flex items-center gap-2">
             <Github className="h-5 w-5" />
             <span className="text-sm">Open Source</span>
           </div>
           <div className="flex items-center gap-2">
             <Download className="h-5 w-5" />
-            <span className="text-sm">1.2k+ Downloads</span>
+            <span className="text-sm">{packageInfo?.downloads || '1.2k+'} Downloads</span>
           </div>
           <div className="flex items-center gap-2">
             <Star className="h-5 w-5" />
-            <span className="text-sm">50+ Stars</span>
+            <span className="text-sm">{packageInfo?.stars || '50+'} Stars</span>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-slate-400 rounded-full mt-2 animate-pulse"></div>
         </div>
