@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 import { Button } from './ui/button';
-import { Github, Moon, Sun, Play, BookOpen } from 'lucide-react';
+import { Github, Moon, Sun, Play, BookOpen, Code } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/navigation';
 
@@ -13,6 +13,9 @@ export const Header = () => {
     <header className="dark:bg-secondary/75 bg-white/50 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50">
       <div className="_container flex items-center justify-between gap-3 h-[64px]">
         <div className="lg:flex-1 flex items-center gap-1.5">
+        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <Code className="h-5 w-5 text-white" />
+                </div>  
           <Link
             href={'/'}
             className="flex-shrink-0 font-bold text-xl text-primary flex items-end gap-1.5"
