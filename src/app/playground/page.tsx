@@ -59,7 +59,7 @@ export default function PlaygroundPage() {
 
 
   return (
-    <section className='container mx-auto'>
+    <section className='container mx-auto pt-12'>
     <div className="space-y-8">
       {/* Header */}
       <SectionHeader

@@ -1,14 +1,14 @@
 'use client'
 import Link from 'next/link';
 import { Button } from './ui/button';
-import { Github, Moon, Sun } from 'lucide-react';
-import { AsideDrawer } from './AsideDrawer';
+import { Github, Moon, Sun, Play, BookOpen } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/navigation';
 
 export const Header = () => {
   const { setTheme, theme } = useTheme();
-    const router = useRouter()
+  const router = useRouter()
+  
   return (
     <header className="dark:bg-secondary/75 bg-white/50 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50">
       <div className="_container flex items-center justify-between gap-3 h-[64px]">
@@ -25,17 +25,27 @@ export const Header = () => {
           <li className="relative">
             <Link
               href={'/'}
-              className="text-sm/6 font-semibold flex items-center gap-1 text-primary"
+              className="text-sm/6 font-semibold flex items-center gap-1 text-primary hover:text-primary/80 transition-colors"
             >
-              Guides
+              Overview
             </Link>
           </li>
           <li className="relative">
             <Link
-              href={'/'}
-              className="text-sm/6 font-semibold flex items-center gap-1 text-black dark:text-white"
+              href={'/playground'}
+              className="text-sm/6 font-semibold flex items-center gap-1 text-black dark:text-white hover:text-primary transition-colors"
             >
-              Installation
+              <Play className="h-4 w-4" />
+              Playground
+            </Link>
+          </li>
+          <li className="relative">
+            <Link
+              href={'/api-references'}
+              className="text-sm/6 font-semibold flex items-center gap-1 text-black dark:text-white hover:text-primary transition-colors"
+            >
+              <BookOpen className="h-4 w-4" />
+              API Reference
             </Link>
           </li>
         </ul>
@@ -43,14 +53,21 @@ export const Header = () => {
         <div className="flex items-center justify-end lg:flex-1 gap-1.5">
           <Button
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            variant="outline"
+            size="sm"
+            className="h-9 w-9 p-0"
           >
             <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           </Button>
-          <Button onClick={()=> router.push('https://github.com/meer-sagor/wavesufer-vue')}>
-            <Github />
+          <Button 
+            onClick={() => router.push('https://github.com/meer-sagor/wavesurfer-vue')}
+            variant="outline"
+            size="sm"
+            className="h-9 w-9 p-0"
+          >
+            <Github className="h-4 w-4" />
           </Button>
-          <AsideDrawer />
         </div>
       </div>
     </header>
