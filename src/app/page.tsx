@@ -5,6 +5,7 @@ import { InteractivePlayground } from "@/components/playground";
 import { InstallationSection } from "@/components/InstallationSection";
 import { WhyChooseSection } from "@/components/WhyChooseSection";
 import { PackageInfoSection } from "@/components/PackageInfoSection";
+import { ContributionsSection } from "@/components/ContributionsSection";
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
       <InstallationSection/>
       <InteractivePlayground/>
       <WhyChooseSection/>
-      <PackageInfoSection/> 
+      <PackageInfoSection/>
+      <ContributionsSection/>
     </main>
   );
 }
