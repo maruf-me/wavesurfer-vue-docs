@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { SectionCard } from '@/components/ui/section-card';
 import { SectionHeader } from '@/components/ui/section-header';
 import { CodeBlock } from '@/components/ui/code-block';
-import { CTASection } from '@/components/ui/cta-section';
 import { 
   Package, Copy, Check, Download, Terminal, 
   Zap, Star, Github, ExternalLink
@@ -66,7 +66,7 @@ const { waveSurfer, currentTime, totalDuration, isPlaying } = useWaveSurfer({
   ];
 
   return (
-    <section className="py-24 bg-gradient-section dark:bg-gradient-section-dark relative overflow-hidden">
+    <section id='installation' className="py-24 bg-gradient-section dark:bg-gradient-section-dark relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-br from-green-400/10 to-blue-600/10 rounded-full blur-3xl"></div>
@@ -200,65 +200,45 @@ const { waveSurfer, currentTime, totalDuration, isPlaying } = useWaveSurfer({
                   asChild 
                   className="w-full justify-start bg-white/80 backdrop-blur-sm hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-700"
                 >
-                  <a href="/docs/introduction">
+                  <Link href="/api-references">
                     <Package className="h-4 w-4 mr-2" />
-                    Documentation
-                  </a>
+                    API References
+                  </Link>
                 </Button>
                 <Button 
                   variant="outline" 
                   asChild 
                   className="w-full justify-start bg-white/80 backdrop-blur-sm hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-700"
                 >
-                  <a href="/docs/playground">
+                  <Link href="/playground">
                     <Terminal className="h-4 w-4 mr-2" />
                     Interactive Playground
-                  </a>
+                  </Link>
                 </Button>
                 <Button 
                   variant="outline" 
                   asChild 
                   className="w-full justify-start bg-white/80 backdrop-blur-sm hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-700"
                 >
-                  <a href="https://github.com/meer-sagor/wavesurfer-vue" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://github.com/meer-sagor/wavesurfer-vue" target="_blank" rel="noopener noreferrer">
                     <Github className="h-4 w-4 mr-2" />
                     GitHub Repository
-                  </a>
+                  </Link>
                 </Button>
                 <Button 
                   variant="outline" 
                   asChild 
                   className="w-full justify-start bg-white/80 backdrop-blur-sm hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-700"
                 >
-                  <a href="https://www.npmjs.com/package/@meersagor/wavesurfer-vue" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://www.npmjs.com/package/@meersagor/wavesurfer-vue" target="_blank" rel="noopener noreferrer">
                     <Package className="h-4 w-4 mr-2" />
                     NPM Package
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </SectionCard>
           </div>
         </div>
-
-        {/* CTA Section */}
-        <CTASection
-          title="Ready to Start Building?"
-          description="Join thousands of developers building amazing audio experiences with WaveSurfer Vue"
-          backgroundGradient="from-green-50 to-blue-50 dark:from-slate-800 dark:to-slate-700"
-        >
-          <Button asChild size="lg" className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <a href="/docs/introduction">
-              <Download className="h-5 w-5 mr-2" />
-              Get Started
-            </a>
-          </Button>
-          <Button variant="outline" asChild size="lg" className="px-8 py-4 text-lg font-semibold border-2 border-slate-300 hover:border-slate-400 bg-white/80 backdrop-blur-sm hover:bg-white dark:bg-slate-800/80 dark:border-slate-600 dark:hover:border-slate-500 transition-all duration-300 hover:-translate-y-1">
-            <a href="/docs/playground">
-              <Terminal className="h-5 w-5 mr-2" />
-              Try Playground
-            </a>
-          </Button>
-        </CTASection>
       </div>
     </section>
   );

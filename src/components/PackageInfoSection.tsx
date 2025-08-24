@@ -2,9 +2,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 import { 
   Package, Download, Star, GitBranch, 
-  ArrowRight, ExternalLink, Github, Copy, Check
+  ArrowRight, ExternalLink, Github, Copy, Check,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -189,30 +190,30 @@ export function PackageInfoSection() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href={packageInfo.repository} target="_blank" rel="noopener noreferrer">
+                  <Link href={packageInfo.repository} target="_blank" rel="noopener noreferrer">
                     <Github className="h-4 w-4 mr-2" />
                     View on GitHub
                     <ExternalLink className="h-4 w-4 ml-auto" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href={packageInfo.npmUrl} target="_blank" rel="noopener noreferrer">
+                  <Link href={packageInfo.npmUrl} target="_blank" rel="noopener noreferrer">
                     <Package className="h-4 w-4 mr-2" />
                     View on NPM
                     <ExternalLink className="h-4 w-4 ml-auto" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="/docs/introduction">
+                  <Link href="/">
                     <ArrowRight className="h-4 w-4 mr-2" />
                     Documentation
-                  </a>
+                  </Link>
                 </Button>
                 <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="/docs/playground">
+                  <Link href="/playground">
                     <ArrowRight className="h-4 w-4 mr-2" />
                     Interactive Playground
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -249,10 +250,10 @@ export function PackageInfoSection() {
                     Get started with @meersagor/wavesurfer-vue in your Vue 3 project.
                   </p>
                   <Button asChild className="w-full">
-                    <a href="/docs/installation">
+                    <Link href="/">
                       Installation Guide
                       <ArrowRight className="h-4 w-4 ml-2" />
-                    </a>
+                    </Link>
                   </Button>
                 </div>
               </CardContent>

@@ -6,6 +6,7 @@ import { BenefitsList } from "@/components/ui/benefits-list";
 import { CodeBlock } from "@/components/ui/code-block";
 import { CTASection } from "@/components/ui/cta-section";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const FeaturesSection = () => {
   const features = [
@@ -153,17 +154,17 @@ import { useWaveSurferTimeline } from '@meersagor/wavesurfer-vue'
           description="Start building amazing audio experiences with our modular plugin system"
         >
           <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <a href="/docs/introduction">
+              <Link href="#installation">
               <Play className="h-5 w-5 mr-2" />
               Get Started
               <ArrowRight className="h-5 w-5 ml-2" />
-            </a>
+            </Link>
           </Button>
           <Button variant="outline" asChild size="lg" className="px-8 py-4 text-lg font-semibold border-2 border-slate-300 hover:border-slate-400 bg-white/80 backdrop-blur-sm hover:bg-white dark:bg-slate-800/80 dark:border-slate-600 dark:hover:border-slate-500 transition-all duration-300 hover:-translate-y-1">
-            <a href="/docs/playground">
+            <Link href="/playground">
               <Settings className="h-5 w-5 mr-2" />
               Try Playground
-            </a>
+            </Link>
           </Button>
         </CTASection>
       </div>

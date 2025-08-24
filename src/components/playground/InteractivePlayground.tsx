@@ -210,7 +210,7 @@ export function InteractivePlayground() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <a href="/docs/introduction">
+                <a href="/">
                   <Play className="h-5 w-5 mr-2" />
                   Get Started
                   <ArrowRight className="h-5 w-5 ml-2" />

@@ -6,7 +6,8 @@ import { ExternalLink, Code, Settings, Play, Volume2 } from 'lucide-react';
 
 export default function PlayerPropsPage() {
   return (
-    <div className="space-y-8">
+   <section className='container mx-auto'>
+     <div className="space-y-8">
       {/* Header */}
       <div className="space-y-4">
         <h1 className="text-4xl font-bold tracking-tight">WaveSurferPlayer Props</h1>
@@ -89,7 +90,7 @@ export default function PlayerPropsPage() {
                           <Badge variant="outline" className="text-xs">string</Badge>
                         </div>
                         <p className="text-sm text-muted-foreground">Color of the waveform bars</p>
-                        <code className="text-xs text-primary">Default: '#999'</code>
+                        <code className="text-xs text-primary">Default: &apos;#999&apos;</code>
                       </div>
                       
                       <div className="bg-muted p-3 rounded-lg">
@@ -98,7 +99,7 @@ export default function PlayerPropsPage() {
                           <Badge variant="outline" className="text-xs">string</Badge>
                         </div>
                         <p className="text-sm text-muted-foreground">Color of the progress overlay</p>
-                        <code className="text-xs text-primary">Default: '#555'</code>
+                        <code className="text-xs text-primary">Default: &apos;#555&apos;</code>
                       </div>
                     </div>
                   </div>
@@ -233,7 +234,7 @@ export default function PlayerPropsPage() {
                           <Badge variant="outline" className="text-xs">string</Badge>
                         </div>
                         <p className="text-sm text-muted-foreground">Color of the playback cursor</p>
-                        <code className="text-xs text-primary">Default: '#333'</code>
+                        <code className="text-xs text-primary">Default: &apos;#333&apos;</code>
                       </div>
                       
                       <div className="bg-muted p-3 rounded-lg">
@@ -323,7 +324,7 @@ export default function PlayerPropsPage() {
                           <Badge variant="outline" className="text-xs">string</Badge>
                         </div>
                         <p className="text-sm text-muted-foreground">Audio backend to use</p>
-                        <code className="text-xs text-primary">Default: 'WebAudio'</code>
+                        <code className="text-xs text-primary">Default: &apos;WebAudio&apos;</code>
                       </div>
                     </div>
                   </div>
@@ -488,5 +489,6 @@ export default function PlayerPropsPage() {
         </CardContent>
       </Card>
     </div>
+   </section>
   );
 }

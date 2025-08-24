@@ -14,7 +14,7 @@ import {
 } from '@/components/playground';
 import { 
   Play, Settings, Code, Copy, Check,
-  Layers, Zap
+  Layers
 } from 'lucide-react';
 
 export default function PlaygroundPage() {
@@ -59,15 +59,12 @@ export default function PlaygroundPage() {
 
 
   return (
+    <section className='container mx-auto'>
     <div className="space-y-8">
       {/* Header */}
       <SectionHeader
         title="Interactive Playground"
         subtitle="Experiment with different plugins and configurations. See live code generation and test various WaveSurfer Vue features."
-        badge={{
-          text: "Live Demo",
-          icon: <Zap className="h-4 w-4 mr-2 text-blue-600" />
-        }}
       />
 
       <div className="grid lg:grid-cols-2 gap-8">
@@ -192,5 +189,7 @@ export default function PlaygroundPage() {
         </div>
       </div>
     </div>
+    </section>
+
   );
 }

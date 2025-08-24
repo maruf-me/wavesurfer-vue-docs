@@ -157,7 +157,7 @@ export function WhyChooseSection() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button asChild size="lg">
-                <a href="/docs/introduction">
+                <a href="/">
                   Get Started
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </a>

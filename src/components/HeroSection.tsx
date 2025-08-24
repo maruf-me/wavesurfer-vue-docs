@@ -74,19 +74,19 @@ export const HeroSection = () => {
         {/* CTA Buttons */}
         <div className="flex gap-4 justify-center flex-wrap mb-12 animate-fade-in-up delay-400">
           <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <Link href="/docs/introduction">
+                            <Link href="#installation">
               Get Started
               <ArrowRight className="h-5 w-5 ml-2" />
             </Link>
           </Button>
           <Button variant="outline" asChild size="lg" className="px-8 py-4 text-lg font-semibold border-2 border-slate-300 hover:border-slate-400 bg-white/80 backdrop-blur-sm hover:bg-white dark:bg-slate-800/80 dark:border-slate-600 dark:hover:border-slate-500 transition-all duration-300 hover:-translate-y-1">
-            <Link href="/docs/playground">
+            <Link href="/playground">
               <Play className="h-5 w-5 mr-2" />
               Try Playground
             </Link>
           </Button>
           <Button variant="outline" asChild size="lg" className="px-8 py-4 text-lg font-semibold border-2 border-slate-300 hover:border-slate-400 bg-white/80 backdrop-blur-sm hover:bg-white dark:bg-slate-800/80 dark:border-slate-600 dark:hover:border-slate-500 transition-all duration-300 hover:-translate-y-1">
-            <Link href="/docs/installation">
+            <Link href="#installation">
               <Settings className="h-5 w-5 mr-2" />
               Installation
             </Link>

@@ -24,7 +24,7 @@ export const Header = () => {
         <ul className="items-center gap-x-8 hidden lg:flex">
           <li className="relative">
             <Link
-              href={'/docs/introduction'}
+              href={'/'}
               className="text-sm/6 font-semibold flex items-center gap-1 text-primary"
             >
               Guides
@@ -32,7 +32,7 @@ export const Header = () => {
           </li>
           <li className="relative">
             <Link
-              href={'/docs/installation'}
+              href={'/'}
               className="text-sm/6 font-semibold flex items-center gap-1 text-black dark:text-white"
             >
               Installation
