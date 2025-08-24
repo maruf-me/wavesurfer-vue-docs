@@ -26,7 +26,7 @@ export const DefaultLayout = ({
   return (
     <html lang="en">
       <body
-        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-secondary bg-white`)} suppressHydrationWarning={true}
+        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-hero dark:bg-gradient-hero-dark`)} suppressHydrationWarning={true}
       >
         <ThemeProvider
           attribute="class"
