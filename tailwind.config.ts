@@ -11,7 +11,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#00dc82",
+        primary: "#6366f1", // Indigo-500 - matches the blue-purple theme
+        "primary-light": "#818cf8", // Indigo-400
+        "primary-dark": "#4f46e5", // Indigo-600
+        "primary-50": "#eef2ff",
+        "primary-100": "#e0e7ff",
+        "primary-200": "#c7d2fe",
+        "primary-300": "#a5b4fc",
+        "primary-400": "#818cf8",
+        "primary-500": "#6366f1",
+        "primary-600": "#4f46e5",
+        "primary-700": "#4338ca",
+        "primary-800": "#3730a3",
+        "primary-900": "#312e81",
         secondary: "#020420",
         white: "#ffffff",
         black: "#111827",
@@ -63,6 +75,16 @@ export default {
         "14": "-0.14px",
         "22": "-0.22px",
         "24": "-0.24px",
+      },
+      backgroundImage: {
+        "gradient-hero": "linear-gradient(to bottom right, #f8fafc, #dbeafe, #e0e7ff)",
+        "gradient-hero-dark": "linear-gradient(to bottom right, #0f172a, #1e293b, #0f172a)",
+        "gradient-features": "linear-gradient(to bottom, #f8fafc, #ffffff)",
+        "gradient-features-dark": "linear-gradient(to bottom, #0f172a, #1e293b)",
+        "gradient-section": "linear-gradient(to bottom, #f1f5f9, #ffffff)",
+        "gradient-section-dark": "linear-gradient(to bottom, #1e293b, #0f172a)",
+        "gradient-card": "linear-gradient(to bottom right, #ffffff, #f8fafc)",
+        "gradient-card-dark": "linear-gradient(to bottom right, #1e293b, #0f172a)",
       },
     },
     plugins: ["tailwindcssAnimate"],

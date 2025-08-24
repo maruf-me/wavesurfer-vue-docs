@@ -18,7 +18,7 @@ const navigationItems = [
     ],
   },
   {
-    title: "Usage",
+    title: "Audio Player",
     items: [
       {
         title: "Component Usage",
@@ -27,6 +27,99 @@ const navigationItems = [
       {
         title: "Composable Usage",
         href: "/docs/composable-usage",
+      },
+      {
+        title: "Player Options",
+        href: "/docs/player-options",
+      },
+      {
+        title: "Player Events",
+        href: "/docs/player-events",
+      },
+    ],
+  },
+  {
+    title: "Audio Recorder",
+    items: [
+      {
+        title: "Recorder Setup",
+        href: "/docs/recorder-setup",
+      },
+      {
+        title: "Recording Methods",
+        href: "/docs/recording-methods",
+      },
+      {
+        title: "Record Plugin Options",
+        href: "/docs/record-plugin-options",
+      },
+    ],
+  },
+  {
+    title: "Plugins & Features",
+    items: [
+      {
+        title: "Available Plugins",
+        href: "/docs/plugins",
+      },
+      {
+        title: "Plugin Configuration",
+        href: "/docs/plugin-configuration",
+      },
+      {
+        title: "Custom Plugins",
+        href: "/docs/custom-plugins",
+      },
+    ],
+  },
+  {
+    title: "Examples",
+    items: [
+      {
+        title: "Basic Player",
+        href: "/docs/examples/basic-player",
+      },
+      {
+        title: "Advanced Player",
+        href: "/docs/examples/advanced-player",
+      },
+      {
+        title: "Audio Recorder",
+        href: "/docs/examples/audio-recorder",
+      },
+      {
+        title: "With Plugins",
+        href: "/docs/examples/with-plugins",
+      },
+    ],
+  },
+  {
+    title: "Playground",
+    items: [
+      {
+        title: "Interactive Playground",
+        href: "/docs/playground",
+      },
+    ],
+  },
+  {
+    title: "API Reference",
+    items: [
+      {
+        title: "WaveSurferPlayer Props",
+        href: "/docs/api/player-props",
+      },
+      {
+        title: "useWaveSurfer Return",
+        href: "/docs/api/use-wavesurfer",
+      },
+      {
+        title: "useWaveSurferRecorder Return",
+        href: "/docs/api/use-wavesurfer-recorder",
+      },
+      {
+        title: "Events Reference",
+        href: "/docs/api/events",
       },
     ],
   },

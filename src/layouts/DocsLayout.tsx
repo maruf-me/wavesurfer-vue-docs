@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 const DocsLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <div className={cn("dark:bg-secondary bg-white relative")}>
+    <div className={cn("bg-gradient-section dark:bg-gradient-section-dark relative")}>
       <div className={cn("_container lg:grid grid-cols-5")}>
         <aside className={cn("-mb-px sticky top-[64px] col-start-1 col-end-2 h-[calc(100vh-64px)] hidden lg:block")}>
           <AsideBar />

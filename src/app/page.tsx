@@ -1,15 +1,18 @@
-import { DemoSection } from "@/components/DemoSection";
+
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { HeroSection } from "@/components/HeroSection";
-import { InstallationSection } from "@/components/InstallationSection";
+import { InteractivePlayground } from "@/components/InteractivePlayground";
+import { WhyChooseSection } from "@/components/WhyChooseSection";
+import { PackageInfoSection } from "@/components/PackageInfoSection";
 
 export default function Home() {
   return (
     <main>
       <HeroSection/>
       <FeaturesSection/>
-      <DemoSection/>
-      <InstallationSection/>
+      <InteractivePlayground/>
+      <WhyChooseSection/>
+      <PackageInfoSection/> 
     </main>
   );
 }
