@@ -1,7 +1,7 @@
 
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { HeroSection } from "@/components/HeroSection";
-import { InteractivePlayground } from "@/components/InteractivePlayground";
+import { InteractivePlayground } from "@/components/playground";
 import { WhyChooseSection } from "@/components/WhyChooseSection";
 import { PackageInfoSection } from "@/components/PackageInfoSection";
 
