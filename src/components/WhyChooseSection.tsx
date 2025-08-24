@@ -6,6 +6,7 @@ import {
   Layers, Zap, Code, Settings, Package, Star, 
   ArrowRight, Github
 } from 'lucide-react';
+import Link from 'next/link';
 
 export function WhyChooseSection() {
   const benefits = [
@@ -157,10 +158,10 @@ export function WhyChooseSection() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button asChild size="lg">
-                <a href="/">
+<Link href="/">
                   Get Started
                   <ArrowRight className="h-4 w-4 ml-2" />
-                </a>
+                </Link>
               </Button>
               <Button variant="outline" asChild size="lg">
                 <a href="https://github.com/meer-sagor/wavesurfer-vue" target="_blank" rel="noopener noreferrer">

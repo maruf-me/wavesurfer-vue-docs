@@ -16,6 +16,7 @@ import {
   Play, Settings, Code, Copy, Check,
   Layers, Zap, ExternalLink, ArrowRight
 } from 'lucide-react';
+import Link from 'next/link';
 
 export function InteractivePlayground() {
   const [copied, setCopied] = useState<string | null>(null);
@@ -210,11 +211,11 @@ export function InteractivePlayground() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <a href="/">
+<Link href="/">
                   <Play className="h-5 w-5 mr-2" />
                   Get Started
                   <ArrowRight className="h-5 w-5 ml-2" />
-                </a>
+                </Link>
               </Button>
               <Button variant="outline" asChild size="lg" className="px-8 py-4 text-lg font-semibold border-2 border-slate-300 hover:border-slate-400 bg-white/80 backdrop-blur-sm hover:bg-white dark:bg-slate-800/80 dark:border-slate-600 dark:hover:border-slate-500 transition-all duration-300 hover:-translate-y-1">
                 <a href="https://github.com/meer-sagor/wavesurfer-vue" target="_blank" rel="noopener noreferrer">
