@@ -17,6 +17,7 @@ import {
   Layers
 } from 'lucide-react';
 
+
 export default function PlaygroundPage() {
   const [copied, setCopied] = useState<string | null>(null);
   const [activePlugins, setActivePlugins] = useState<string[]>(['timeline']);

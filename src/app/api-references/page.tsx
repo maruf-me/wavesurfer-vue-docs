@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Code, Settings, Play, Volume2, BookOpen } from 'lucide-react';
 
+
 export default function PlayerPropsPage() {
   return (
    <section className='container mx-auto pt-12'>
