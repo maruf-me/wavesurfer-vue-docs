@@ -52,8 +52,17 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  metadataBase: new URL('https://docs-wavesurfer.meersagor.com'),
   alternates: {
     canonical: '/',
+  },
+  icons: {
+    icon: [
+      { url: '/icon', type: 'image/png' },
+      { url: '/icon.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/apple-icon',
+    shortcut: '/favicon.ico'
   },
   openGraph: {
     type: 'website',
@@ -61,12 +70,21 @@ export const metadata: Metadata = {
     title: 'Wavesurfer for Vue 3 by Meer Sagor',
     description: 'A Vue 3 component for wavesurfer.js. This component simplifies the usage of wavesurfer.js in Vue.js applications with TypeScript support.',
     siteName: 'Wavesurfer for Vue 3',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'WaveSurfer for Vue 3 - Audio Visualization Component',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Wavesurfer for Vue 3 by Meer Sagor',
     description: 'A Vue 3 component for wavesurfer.js. This component simplifies the usage of wavesurfer.js in Vue.js applications with TypeScript support.', 
     creator: '@meersagor',
+    images: ['/twitter-image'],
   },
   robots: {
     index: true,
