@@ -26,7 +26,7 @@ export const HeroSection = ({ packageInfo }: { packageInfo: NpmPackageInfo | nul
           </Badge>
           <Badge variant="outline" className="px-4 py-2 text-sm bg-white/80 backdrop-blur-sm border-green-200 dark:bg-slate-800/80 dark:border-green-700">
             <Star className="h-4 w-4 mr-2 text-green-600" />
-            New Release
+            New Release 2.0
           </Badge>
         </div>
         
