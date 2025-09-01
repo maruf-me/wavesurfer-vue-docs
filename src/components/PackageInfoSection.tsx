@@ -216,19 +216,14 @@ export function PackageInfoSection({ packageInfo }: { packageInfo: NpmPackageInf
                 <CardTitle>Dependencies</CardTitle>
               </CardHeader>
               <CardContent>
+                
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">Vue</span>
-                    <Badge variant="secondary">^3.0.0</Badge>
+                {Object.entries(currentInfo?.dependencies || {}).map(([key, value]) => (
+                  <div key={key} className="flex justify-between items-center">
+                    <span className="font-medium">{key}</span>
+                    <Badge variant="secondary">{value}</Badge>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">wavesurfer.js</span>
-                    <Badge variant="secondary">^7.0.0</Badge>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">TypeScript</span>
-                    <Badge variant="secondary">^4.9.0</Badge>
-                  </div>
+                ))}
                 </div>
               </CardContent>
             </Card>
