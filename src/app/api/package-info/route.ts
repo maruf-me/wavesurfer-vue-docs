@@ -12,10 +12,10 @@ export async function GET() {
     }
     
     const npmData = await npmResponse.json();
-    
     // Get the latest version
     const latestVersion = npmData['dist-tags']?.latest || '1.0.0';
     const latestVersionData = npmData.versions[latestVersion];
+    const latestUpdateTime = npmData.time[latestVersion];
     
     // Fetch GitHub data for stars, forks, etc.
     const githubResponse = await fetch('https://api.github.com/repos/meer-sagor/wavesurfer-vue');
@@ -40,7 +40,7 @@ export async function GET() {
       downloads: downloadsData?.downloads ? `${downloadsData.downloads.toLocaleString()}+` : '1.2k+',
       stars: githubData?.stargazers_count ? `${githubData.stargazers_count}+` : '50+',
       forks: githubData?.forks_count ? `${githubData.forks_count}+` : '25+',
-      lastUpdated: latestVersionData?.time ? new Date(latestVersionData.time).toISOString().split('T')[0] : '2024-01-15',
+      lastUpdated: latestUpdateTime ? new Date(latestUpdateTime).toISOString().split('T')[0] : '2024-01-15',
       license: latestVersionData?.license || 'MIT',
       repository: latestVersionData?.repository?.url?.replace('git+', '').replace('.git', '') || 'https://github.com/meer-sagor/wavesurfer-vue',
       npmUrl: `https://www.npmjs.com/package/${packageName}`,

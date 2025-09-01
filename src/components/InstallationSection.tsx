@@ -10,8 +10,9 @@ import {
   Package, Copy, Check, Download, Terminal, 
   Zap, Star, Github, ExternalLink
 } from 'lucide-react';
+import type { NpmPackageInfo } from '@/@types/packageInfo';
 
-export function InstallationSection() {
+export function InstallationSection({ packageInfo }: { packageInfo: NpmPackageInfo | null }) {
   const [copied, setCopied] = useState<string | null>(null);
 
   const copyToClipboard = async (text: string, type: string) => {
@@ -59,9 +60,9 @@ const { waveSurfer, currentTime, totalDuration, isPlaying } = useWaveSurfer({
 </template>`;
 
   const packageStats = [
-    { label: 'Downloads', value: '10K+', icon: Download },
-    { label: 'Stars', value: '500+', icon: Star },
-    { label: 'Version', value: '1.0.0', icon: Package },
+    { label: 'Downloads', value: packageInfo?.downloads, icon: Download },
+    { label: 'Stars', value: packageInfo?.stars, icon: Star },
+    { label: 'Version', value: packageInfo?.version, icon: Package },
     { label: 'License', value: 'MIT', icon: Zap }
   ];
 

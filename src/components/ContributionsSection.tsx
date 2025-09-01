@@ -15,8 +15,9 @@ import {
   Globe
 } from 'lucide-react';
 import Link from 'next/link';
+import type { NpmPackageInfo } from '@/@types/packageInfo';
 
-export const ContributionsSection = () => {
+export const ContributionsSection = ({ packageInfo }: { packageInfo: NpmPackageInfo | null }) => {
   return (
     <section className="bg-gradient-section dark:bg-gradient-section-dark py-20">
       <div className="container mx-auto px-4">
@@ -79,21 +80,21 @@ export const ContributionsSection = () => {
                   <div className="text-center">
                     <div className="flex items-center gap-1 text-lg font-bold text-primary">
                       <Star className="h-4 w-4" />
-                      <span>100+</span>
+                      <span>{packageInfo?.stars}</span>
                     </div>
                     <p className="text-xs text-muted-foreground">Stars</p>
                   </div>
                   <div className="text-center">
                     <div className="flex items-center gap-1 text-lg font-bold text-primary">
                       <GitBranch className="h-4 w-4" />
-                      <span>50+</span>
+                      <span>{packageInfo?.forks}</span>
                     </div>
                     <p className="text-xs text-muted-foreground">Forks</p>
                   </div>
                   <div className="text-center">
                     <div className="flex items-center gap-1 text-lg font-bold text-primary">
                       <Users className="h-4 w-4" />
-                      <span>25+</span>
+                      <span>2+</span>
                     </div>
                     <p className="text-xs text-muted-foreground">Contributors</p>
                   </div>
@@ -159,21 +160,21 @@ export const ContributionsSection = () => {
                   <div className="text-center">
                     <div className="flex items-center gap-1 text-lg font-bold text-primary">
                       <FileText className="h-4 w-4" />
-                      <span>20+</span>
+                      <span>2+</span>
                     </div>
                     <p className="text-xs text-muted-foreground">Pages</p>
                   </div>
                   <div className="text-center">
                     <div className="flex items-center gap-1 text-lg font-bold text-primary">
                       <Code className="h-4 w-4" />
-                      <span>50+</span>
+                      <span>10+</span>
                     </div>
                     <p className="text-xs text-muted-foreground">Examples</p>
                   </div>
                   <div className="text-center">
                     <div className="flex items-center gap-1 text-lg font-bold text-primary">
                       <Users className="h-4 w-4" />
-                      <span>10+</span>
+                      <span>2+</span>
                     </div>
                     <p className="text-xs text-muted-foreground">Contributors</p>
                   </div>

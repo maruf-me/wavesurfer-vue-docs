@@ -11,14 +11,15 @@ async function getPackageInfo(): Promise<NpmPackageInfo | null> {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
     const response = await fetch(`${baseUrl}/api/package-info`, {
-      next: { revalidate: 3600 } // Revalidate every hour
+      next: { revalidate: 3600 }, // Revalidate every hour
+      cache: 'no-cache'
     });
     
     if (!response.ok) {
-      throw new Error('Failed to fetch package info');
+      throw new Error(`Failed to fetch package info: ${response.status}`);
     }
-    
-    return await response.json();
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error('Error fetching package info:', error);
     return null;
@@ -32,11 +33,11 @@ export default async function Home() {
     <main>
       <HeroSection packageInfo={packageInfo}/>
       <FeaturesSection/>
-      <InstallationSection/>
+      <InstallationSection packageInfo={packageInfo}/>
       <InteractivePlayground/>
       <WhyChooseSection/>
       <PackageInfoSection packageInfo={packageInfo} />
-      <ContributionsSection/>
+      <ContributionsSection packageInfo={packageInfo} />
     </main>
   );
 }
